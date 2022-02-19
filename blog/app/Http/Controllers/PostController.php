@@ -14,6 +14,21 @@ class PostController extends Controller
     public function index()
     {
         //
+        'hello world';
+
+            // 1- get the posts data from the data base
+            // 2- pass the posts data to the index.blade.php
+            // 3- in the index view you have to loop on the data
+            // and display it in a nice looking table
+        $posts = [
+            ['id' => '1', 'title' => 'Learn PHP', 'posted-by' => 'Ahmed', 'created-at' => '2018-04-10'],
+            ['id' => '2', 'title' => 'Solid Principles', 'posted-by' => 'Mohamed', 'created-at' => '2018-04-12'],
+            ['id' => '3', 'title' => 'Design Patterns', 'posted-by' => 'Ali', 'created-at' => '2018-04-13']
+        ];
+        // dd($posts); //to stop excution and dump the $posts
+        return view('posts.index',[
+            'posts' => $posts
+        ]);
     }
 
     /**
@@ -24,6 +39,7 @@ class PostController extends Controller
     public function create()
     {
         //
+        return view('posts.create');
     }
 
     /**
