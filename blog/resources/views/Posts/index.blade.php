@@ -30,9 +30,21 @@
                         <td>{{ $post['title']}}</td>
                         <td>{{ $post['posted-by']}}</td>
                         <td>{{ $post['created-at']}}</td>
-                        <td><a href="{{route('posts.show', $post['id'])}}" class="btn btn-info">View</a></td>
-                        <td><a href="{{route('posts.edit', $post['id'])}}" class="btn btn-primary">Edit</a></td>
-                        <td><a href="{{route('posts.destroy', $post['id'])}}" class="btn btn-danger">Delete</a></td>
+                        <td>
+                            <a href="{{route('posts.show', $post['id'])}}" class="btn btn-info">
+                            View
+                        </a>
+                    </td>
+                        <td>
+                            <a href="{{route('posts.edit', $post['id'])}}" class="btn btn-primary">
+                            Edit
+                        </a>
+                    </td>
+                        <td>
+                            <a href="{{route('posts.destroy', $post['id'])}}" class="btn btn-danger">
+                            Delete
+                        </a>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
@@ -40,3 +52,7 @@
     </div>
 
 @endsection
+{{-- class="btn btn-danger" --}}
+{{-- <x-button type="primary"></x-button>
+<x-button type="secondary"></x-button>
+<x-button type="danger"></x-button> --}}
