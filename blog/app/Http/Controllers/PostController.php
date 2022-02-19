@@ -51,6 +51,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
+
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -61,7 +63,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('posts.show', [
+            'id' => $id
+        ]);
     }
 
     /**
@@ -73,6 +77,9 @@ class PostController extends Controller
     public function edit($id)
     {
         //
+        return view('posts.edit', [
+            'id' => $id
+        ]);
     }
 
     /**
@@ -95,6 +102,6 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return redirect()->route('posts.index');
     }
 }

@@ -7,7 +7,7 @@
 @section('content')
 
     <div class=" row d-flex justify-content-center my-5" >
-            <a href="{{route('posts.create')}}" class="btn btn-success" style="width:10em !important">
+            <a href="{{route('posts.create')}}" class="btn btn-success" style="width:8em !important">
                 Create Post
             </a>
     </div>
