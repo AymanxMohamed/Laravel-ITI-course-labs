@@ -69,9 +69,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
         return view('posts.edit', [
-            'id' => $id
+            'post' => Post::find($id),
+            'users' => User::all(),
         ]);
     }
 
@@ -84,7 +84,12 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Post::where('id', $id)->update([
+            'title' => $request->all()['title'],
+            'description' => $request->all()['description'],
+            'user_id' => $request->all()['user_id'],
+        ]);
+        return redirect()->route('posts.index');
     }
 
     /**
