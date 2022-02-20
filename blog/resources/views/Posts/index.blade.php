@@ -26,24 +26,24 @@
             <tbody>
                 @foreach ($posts as $post)
                     <tr>
-                        <th scope="row">{{ $post['id'] }}</th>
-                        <td>{{ $post['title']}}</td>
-                        <td>{{ $post['posted-by']}}</td>
-                        <td>{{ $post['created-at']}}</td>
+                        <th scope="row">{{ $post->id }}</th>
+                        <td>{{ $post->title }}</td>
+                        <td>{{ $post->user->name }}</td>
+                        <td>{{ $post->created_at }}</td>
                         <td>
                             <a href="{{route('posts.show', $post['id'])}}" class="btn btn-info">
-                            View
-                        </a>
-                    </td>
+                                View
+                            </a>
+                        </td>
                         <td>
                             <a href="{{route('posts.edit', $post['id'])}}" class="btn btn-primary">
-                            Edit
-                        </a>
-                    </td>
+                                Edit
+                            </a>
+                        </td>
                         <td>
                             <a href="{{route('posts.destroy', $post['id'])}}" class="btn btn-danger">
-                            Delete
-                        </a>
+                                Delete
+                            </a>
                         </td>
                     </tr>
                 @endforeach
