@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class PostController extends Controller
 {
@@ -52,8 +53,11 @@ class PostController extends Controller
      */
     public function show($id)
     {
+        $post = Post::find($id);
+        $date = Carbon::parse($post->created_at)->format('l jS \of F Y h:i:s A');
         return view('posts.show', [
-            'id' => $id
+            'post' => $post,
+            'date' => $date,
         ]);
     }
 
@@ -93,4 +97,5 @@ class PostController extends Controller
     {
         return redirect()->route('posts.index');
     }
+
 }

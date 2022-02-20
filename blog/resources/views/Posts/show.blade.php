@@ -1,5 +1,6 @@
 @extends('layouts.main')
 
+
 @section('title')
     show post
 @endsection
@@ -13,12 +14,12 @@
             </div>
             <div class="card-body">
                 <div class="card-title">
-                    <p> <strong>Title :-</strong> Special title treatmment</p>
+                    <p> <strong>Title :-</strong> {{ $post->title }} </p>
                 </div>
                 <h5>
                     Description :-
                 </h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"> {{ $post->description }} </p>
             </div>
         </div>
     </div>
@@ -30,13 +31,13 @@
             </div>
             <div class="card-body">
                 <div class="card-text">
-                    <p> <strong>Name :-</strong> Ayman</p>
+                    <p> <strong>Name :-</strong> {{ $post->user->name }} </p>
                 </div>
                 <div class="card-text">
-                    <p> <strong>Email :-</strong> Ayman@gmail.com</p>
+                    <p> <strong>Email :-</strong> {{ $post->user->email }} </p>
                 </div>
                 <div class="card-text">
-                    <p> <strong>Created At :-</strong> Thursday 25th of December 1975 02:15:16 PM</p>
+                    <p> <strong>Created At :-</strong> {{ $date }} </p>
                 </div>
 
             </div>
