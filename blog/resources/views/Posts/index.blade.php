@@ -41,9 +41,14 @@
                             </a>
                         </td>
                         <td>
-                            <a href="{{ route('posts.destroy', $post->id) }}" class="btn btn-danger">
-                                Delete
-                            </a>
+                            <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+                                @method('delete')
+                                @csrf
+                                <input type="submit" class="btn btn-danger" value="Delete">
+                                {{-- <button type="submit" class="btn btn-danger">
+                                    Delete
+                                </button> --}}
+                            </form>
                         </td>
                     </tr>
                 @endforeach
