@@ -17,7 +17,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">All Posts</a>
+                <a class="nav-link active" aria-current="page" href="{{ route('posts.index') }}">All Posts</a>
                 </li>
             </ul>
             </div>
