@@ -41,10 +41,10 @@
                             </a>
                         </td>
                         <td>
-                            <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+                            <form id="myform" action="{{ route('posts.destroy', $post->id) }}" method="POST">
                                 @method('delete')
                                 @csrf
-                                <input type="submit" class="btn btn-danger" value="Delete">
+                                <input type="submit" class="btn btn-danger show_confirm" title='Delete' data-bs-toggle="modal" data-bs-target="#staticBackdrop" value="Delete">
                                 {{-- <button type="submit" class="btn btn-danger">
                                     Delete
                                 </button> --}}
@@ -56,7 +56,14 @@
         </table>
         {!! $posts->links() !!}
     </div>
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $('.show_confirm').click(function(e) {
+        if(!confirm('Are you sure you want to delete this?')) {
+            e.preventDefault();
+        }
+    });
+</script>
 @endsection
 {{-- class="btn btn-danger" --}}
 {{-- <x-button type="primary"></x-button>
