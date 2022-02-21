@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('title')
     Index
@@ -45,9 +45,6 @@
                                 @method('delete')
                                 @csrf
                                 <input type="submit" class="btn btn-danger show_confirm" title='Delete' data-bs-toggle="modal" data-bs-target="#staticBackdrop" value="Delete">
-                                {{-- <button type="submit" class="btn btn-danger">
-                                    Delete
-                                </button> --}}
                             </form>
                         </td>
                     </tr>

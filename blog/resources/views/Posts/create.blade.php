@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('title')
     create post
@@ -14,8 +14,7 @@
     </div>
     <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <textarea class="form-control" name="description" id="description" rows="5">
-        </textarea>
+        <textarea class="form-control" name="description" id="description" rows="5"></textarea>
     </div>
 
     <div class="mb-3">

@@ -5,9 +5,19 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-
+use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\UpdatePostRequest;
 class PostController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -40,8 +50,9 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
+
         Post::create($request->all());
         return redirect()->route('posts.index');
     }
@@ -83,7 +94,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdatePostRequest $request, $id)
     {
         Post::where('id', $id)->update([
             'title' => $request->all()['title'],

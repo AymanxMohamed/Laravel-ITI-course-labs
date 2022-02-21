@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
 @section('title')
     edit post
@@ -15,9 +15,7 @@
     </div>
     <div class="mb-3">
         <label for="description" class="form-label">Description</label>
-        <textarea class="form-control" name="description" id="description" rows="5">
-            {{ $post->description }}
-        </textarea>
+        <textarea class="form-control" name="description" id="description" rows="5">{{ $post->description }}</textarea>
     </div>
 
     <div class="mb-3">
