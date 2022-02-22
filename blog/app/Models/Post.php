@@ -38,13 +38,13 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function getCreatedAtAttribute($date)
-    {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('Y-m-d');
-    }
+    // public function getCreatedAtAttribute($date)
+    // {
+    //     return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('Y-m-d');
+    // }
 
-    public function getUpdatedAtAttribute($date)
-    {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('dddd-mmmm-yyyy H:i:s');
-    }
+    // public function getUpdatedAtAttribute($date)
+    // {
+    //     return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('dddd-mmmm-yyyy H:i:s');
+    // }
 }
