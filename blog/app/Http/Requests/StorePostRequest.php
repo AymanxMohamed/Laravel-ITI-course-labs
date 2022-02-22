@@ -34,8 +34,8 @@ class StorePostRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => 'Overrided Required Message',
-            'title.min' => 'Changed the min rule default message for title'
+            'title.required' => 'The title field is required',
+            'title.min' => 'The minimum value of the title is 3'
         ];
     }
 }

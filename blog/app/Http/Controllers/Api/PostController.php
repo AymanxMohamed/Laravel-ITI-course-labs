@@ -15,36 +15,20 @@ use Carbon\Carbon;
 class PostController extends Controller
 {
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function index(): \Illuminate\Http\Resources\Json\AnonymousResourceCollection
     {
         $posts = Post::all();
         return PostResource::collection($posts);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StorePostRequest $request)
+
+    public function store(StorePostRequest $request): PostResource
     {
         $post = Post::create($request->all());
         return new PostResource($post);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show($id): PostResource
     {
         $post = Post::find($id);
         return new PostResource($post);
